@@ -4,9 +4,7 @@
   justify-content: center;
   gap: 15px;
 }
-.bottom {
-  display: flex;
-}
+
 /* 
 .icon-container {
   position: relative;

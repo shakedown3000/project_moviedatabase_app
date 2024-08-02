@@ -5,12 +5,12 @@
 #root {
   margin: 0 auto;
   padding: 0;
+  height: 100%;
 }
 
 body {
   margin: 5vh auto;
   width: 390px;
-  min-height: 90vh;
   border: 1px solid black;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
 }

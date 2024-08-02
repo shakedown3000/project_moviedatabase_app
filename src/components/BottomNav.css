@@ -1,0 +1,72 @@
+.bottom-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+}
+.bottom {
+  display: flex;
+}
+/* 
+.icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.text {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+}
+
+.icon-container:hover .text {
+  visibility: visible;
+  opacity: 1;
+} */
+
+.bottom {
+  display: flex;
+  align-items: center;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 10px;
+}
+
+.icon-container {
+  color: #97aabd;
+}
+
+.icon-container:hover {
+  color: #fc2121;
+}
+.text {
+  font-family: "Poppins-Headline";
+  font-size: 0.9rem;
+  visibility: hidden;
+  opacity: 0;
+  white-space: nowrap;
+  transition: visibility 0s, opacity 0.5s, width 0.5s;
+  width: 0;
+  overflow: hidden;
+  margin-left: 5px;
+}
+
+.icon-container:hover .text {
+  visibility: visible;
+  opacity: 1;
+  width: auto;
+  color: #fc2121;
+}
+
+.icon-container:hover .svg {
+  fill: #fc2121;
+}

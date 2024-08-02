@@ -18,16 +18,27 @@
 @font-face {
     font-family: 'Montserrat';
 font-weight: 800;
-
     src: url(/Montserrat-VariableFont_wght.ttf);
 }
 
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 25px;
+}
 :root {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 1rem;
+  
+
+   width: 100%;
   --main-color: #fc2121;
-  --placeholder-color:##A4A3A3
+  --placeholder-color:#A4A3A3
   /* --sec-text-color:#676767 */
   --icon-border-color:#97AABD
 
+ 
 }
 
 a {
@@ -39,5 +50,6 @@ a:hover {
     color: var(--main-color);
 }
 
-body {
-}
+
+
+

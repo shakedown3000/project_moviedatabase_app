@@ -1,5 +1,9 @@
 const DetailPage = () => {
-  return <section></section>;
+  return (
+    <section>
+      <p>Test</p>
+    </section>
+  );
 };
 
 export default DetailPage;

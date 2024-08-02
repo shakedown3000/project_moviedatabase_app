@@ -2,12 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+    font-family: 'Poppins-Normal';
+    font-weight: 400;
+    src: url(/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family:'Poppins-Headline';
+    font-weight: 700;
+    src: url(/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat';
+font-weight: 800;
+
+    src: url(/Montserrat-VariableFont_wght.ttf);
+}
+
 :root {
+  --main-color: #fc2121;
+  --placeholder-color:##A4A3A3
+  /* --sec-text-color:#676767 */
+  --icon-border-color:#97AABD
+
 }
 
 a {
+text-decoration: none;
+color:var( --icon-border-color) ;
+
 }
 a:hover {
+    color: var(--main-color);
 }
 
 body {

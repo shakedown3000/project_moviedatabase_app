@@ -23,8 +23,8 @@ font-weight: 800;
 
 *{
     margin: 0;padding: 0;box-sizing: border-box;
-    background-color: #fff;
-    border-radius: 25px;
+    /* background-color: #fff; */
+    /* border-radius: 25px; */
 }
 :root {
     display: flex;

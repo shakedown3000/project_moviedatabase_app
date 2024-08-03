@@ -1,12 +1,12 @@
 import BottomNavBar from "../../components/BottomNav";
-import "./DetailPage.css"; // Stelle sicher, dass die CSS-Datei geladen wird
+import "./DetailPage.css";
 
 const DetailPage = () => {
   return (
     <>
-      <section className="relative h-screen overflow-hidden flex flex-col items-center background p-3 h-full">
+      <section className="relative overflow-hidden flex flex-col items-center background p-3 h-full">
         <div className="gradient-overlay"></div>
-        <div className="flex justify-left w-full h- m-5 ml-10">
+        <div className="flex justify-left w-full m-5 ml-10">
           <div className="inline-flex items-center justify-center p-2 bg-white border border-gray-300 rounded-xl">
             <svg
               className="h-6 w-6 text-gray-500"
@@ -38,8 +38,7 @@ const DetailPage = () => {
               <p>•</p>
               <p>Action</p>
               <p>•</p>
-              <p>2</p>
-              <p>h</p>
+              <p>2h</p>
               <p>38</p>
             </div>
           </div>

@@ -1,47 +1,12 @@
-// /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   daisyui: {
-//     themes: [
-//       {
-//         screens: {
-//           sm: "640px",
-//           md: "768px",
-//           lg: "1024px",
-//           xl: "1280px",
-//           "2xl": "1536px",
-//         },
-//         colors: {
-//           transparent: "transparent",
-//           black: "#000",
-//           white: "#fff",
-//           red: "#fc2121",
-//           placeholder: "#A4A3A3",
-//           iconborder: "#97AABD",
-//         },
-//       },
-//     ],
-//   },
-
-//   content: ["./src/**/*.{html,js}"],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [require("daisyui")],
-// };
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js,ts,tsx}"], // Einschließlich TypeScript-Dateien, falls verwendet
 
   theme: {
     extend: {
       colors: {
-        transparent: "transparent",
-        black: "#000",
-        white: "#fff",
-        customRed: "#fc2121",
-        placeholder: "#A4A3A3",
-        iconborder: "#97AABD",
+        customlightgray: "#FBF8FF",
+        customRed: "#FC2121",
       },
     },
     screens: {
@@ -59,7 +24,7 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#fc2121",
+          primary: "#FC2121", // Definiert die Primärfarbe im DaisyUI-Theme
           secondary: "#97AABD",
           accent: "#A4A3A3",
           neutral: "#000",

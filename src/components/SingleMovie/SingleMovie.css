@@ -1,0 +1,16 @@
+.icon-stroke {
+  stroke: #97aabd;
+}
+
+.icon-stroke-hover:hover {
+  stroke: #ff0000;
+}
+
+.icon-fill {
+  fill: none;
+}
+
+.icon-fill-hover:hover {
+  fill: #ff0000;
+  stroke: none;
+}

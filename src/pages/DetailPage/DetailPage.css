@@ -1,6 +1,7 @@
 .background {
   background: url("/public/Image_Loki.png");
   background-repeat: no-repeat;
+  background-position: top;
 }
 
 .gradient-overlay {
@@ -13,6 +14,7 @@
   position: absolute;
   inset: 0;
   z-index: 10;
+  overflow: hidden;
 }
 
 .h-60 {

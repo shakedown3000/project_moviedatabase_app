@@ -1,0 +1,56 @@
+.TopIntroSection {
+    background: linear-gradient(to bottom right, 
+    rgba(241, 241, 241, 1) 0%, 
+    rgba(252, 33, 33, 0.856) 40%, 
+    rgba(241, 241, 241, 1) 100%);
+}
+
+
+
+.h-50 {
+    height: 50%;
+}
+
+.custom-bgc {
+    background-color: #fc2121 !important;
+    color: white !important;
+    border: none;
+}
+
+.custom-shadow:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+
+/* animation */
+@keyframes slideInRotateJump {
+    0% {
+        transform: translateX(-100%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(0) rotate(20deg);
+    }
+    70% {
+        transform: rotate(-10deg);
+    }
+    }
+
+    @keyframes slideInRotateJumpRight {
+    0% {
+        transform: translateX(100%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(0) rotate(-20deg);
+    }
+    70% {
+        transform: rotate(10deg);
+    }
+    }
+
+
+.animation-slide-in-left {
+    animation: slideInRotateJump 2s ease forwards;
+}
+
+.animation-slide-in-right {
+    animation: slideInRotateJumpRight 2s ease forwards;
+}

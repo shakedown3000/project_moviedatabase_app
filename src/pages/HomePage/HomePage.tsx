@@ -60,6 +60,7 @@ const Home = () => {
           </a>
         </div>
       </section>
+
       <BottomNavBar />
     </section>
   );

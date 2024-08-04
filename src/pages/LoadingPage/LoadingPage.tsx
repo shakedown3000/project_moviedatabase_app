@@ -6,9 +6,10 @@ const LoadingPage = () => {
   const loadingContext = useContext(LoadingContext);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       loadingContext?.setLoading(false);
     }, 3500);
+    return () => clearTimeout(timer);
   }, []);
 
   return (

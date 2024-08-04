@@ -1,3 +1,8 @@
-.header-home {
+.header-home,
+.text-black {
   font-family: "Poppins-Headline";
+}
+
+.text-red {
+  color: #fc2121;
 }

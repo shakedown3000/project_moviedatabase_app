@@ -16,6 +16,10 @@ const LoadingPage = () => {
       <h1 className="">.MOV</h1>
     </section>
   );
+
+
+
+  
 };
 
 export default LoadingPage;

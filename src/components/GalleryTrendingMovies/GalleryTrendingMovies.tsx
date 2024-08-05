@@ -105,6 +105,7 @@
 
 // export default GalleryTrendingMovies;
 
+import { Link, NavLink } from "react-router-dom";
 import { ITrendingMovies } from "../../Interfaces/ITrendingMovies";
 
 interface GalleryTrendingMoviesProps {
@@ -125,12 +126,14 @@ const GalleryTrendingMovies: React.FC<GalleryTrendingMoviesProps> = ({
             style={{
               backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`,
             }}>
-            <div className="bg-black bg-opacity-50 text-white p-4 w-full">
-              <h2 className="text-2xl font-bold mt-6">{movie.title}</h2>
-              <p className="text-yellow-300 text-right mt-20">
-                Rating: {movie.vote_average.toFixed(1)}/10
-              </p>
-            </div>
+            <Link to={`/detail/${movie.id}`}>
+              <div className="bg-black bg-opacity-50 text-white p-4 h-full w-full">
+                <h2 className="text-2xl font-bold mt-6">{movie.title}</h2>
+                <p className="text-yellow-300 text-right mt-20">
+                  Rating: {movie.vote_average.toFixed(1)}/10
+                </p>
+              </div>
+            </Link>
           </div>
         ))}
       </div>

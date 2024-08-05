@@ -1,6 +1,7 @@
 
 
 
+import RedButton from "../../components/RedButton";
 import "./IntroPage.css"
 
 const IntroPage = () => {
@@ -15,8 +16,7 @@ const IntroPage = () => {
             <section className="BottomIntroSection z-10 w-auto h-auto p-24 -mt-36 rounded-none flex flex-col items-center justify-center">
                 <h1 className="text-center w-56 text-2xl text-black">Enjoy Your Movie Watch Everywhere</h1>
                 <p className="text-center w-72 py-8">Stream unlimited movies and TV shows on your phone,tablet, laptop, and TV.</p>
-            <button className="btn btn-wide custom-bgc  hover:scale-105 hover:shadow-lg transition-transform transition-shadow duration-500 ease-in-out custom-shadow">Get Started</button>
-            
+                <RedButton />
             </section>
         </div>
 

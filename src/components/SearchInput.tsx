@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { SearchContext } from "../context/Context";
+const SearchInput = () => {
+  const [search, setSearch] = useState<string>("");
 
-const SearchInput: React.FC = () => {
+  const searchContext = useContext(SearchContext);
+
+  const check = (event: React.FormEvent<HTMLFormElement>) => {
+    event?.preventDefault();
+    if (search) {
+      useEffect(() => {
+        console.log("hello");
+        const options = {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOGQ4NDk0NDY0ZmRjOGYzZWIxOWVmZWIxZWU5OTFjZSIsIm5iZiI6MTcyMjg0Mzg1MC41ODI4NTMsInN1YiI6IjY2YjA3ZmRiZTYyZTljNTgxZjJmNDYzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._jO_1n8Ns-27315mVLZMugsW4e6uFIs6UOJO8rYFLH0`,
+          },
+        };
+        fetch(
+          `https://api.themoviedb.org/3/search/movie?query=${search}`,
+          options
+        )
+          .then((res) => res.json())
+          .then((data) => searchContext?.setSearching(data))
+          .catch((err) => console.error("fetch klappt nicht ", err));
+      }, [searchContext]);
+    }
+    if (searchContext?.searching) {
+      return <div>loading</div>;
+    }
+  };
+
+  console.log(search);
+  console.log(searchContext?.searching);
+
   return (
     <form
-      action="/search"
+      // action="/search"
+      onSubmit={check}
       className="flex justify-center align-center w-full p-6">
       <div className="relative w-full">
         <input
@@ -11,6 +45,10 @@ const SearchInput: React.FC = () => {
           name="q"
           className="w-full h-12 shadow-sm p-4 rounded-lg text-gray-400 placeholder-gray-500 font-thin lightgray-background-search"
           placeholder="Search Movie ..."
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            setSearch(event.target.value)
+          }
+          value={search}
         />
         <button
           type="submit"

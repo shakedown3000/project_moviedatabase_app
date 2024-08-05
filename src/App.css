@@ -9,18 +9,12 @@
 }
 
 body {
+  overflow: hidden;
   margin: 5vh auto;
   width: 390px;
   border: 1px solid black;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 25px;
-}
-
-@media (min-width: 393px) {
-  body {
-    margin: 0 auto;
-    width: 393px;
-    height: 793px;
-    border: solid rgb(187, 187, 187) 0.2px;
-  }
+  width: 393px;
+  height: 793px;
+  border: solid rgb(187, 187, 187) 0.2px;
 }

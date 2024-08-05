@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: "Poppins-Thin";
+  font-weight: 200;
+  src: url(/Poppins-Light.ttf);
+}
+
+@font-face {
   font-family: "Poppins-Normal";
   font-weight: 400;
   src: url(/Poppins-Regular.ttf);

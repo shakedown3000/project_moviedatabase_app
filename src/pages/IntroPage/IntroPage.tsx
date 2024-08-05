@@ -1,7 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import RedButton from "../../components/RedButton";
 import "./IntroPage.css";
 
-const IntroPage = () => {
+const IntroPage: React.FC = () => {
+  const navigate = useNavigate();
+  const handleGetStarted = () => {
+    navigate("/home"); // Navigiert zur /home Route
+  };
+
   return (
     <div className="relative TopIntroSection flex flex-col h-full">
       <section className="flex justify-center align-center pt-20 z-0 overflow-hidden">
@@ -26,7 +32,7 @@ const IntroPage = () => {
           Stream unlimited movies and TV shows on your phone,tablet, laptop, and
           TV.
         </p>
-        <RedButton buttonName="Get Started" />
+        <RedButton buttonName="Get Started" onClick={handleGetStarted} />
       </section>
     </div>
   );

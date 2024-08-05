@@ -1,8 +1,15 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import BottomNavBar from "../../components/BottomNav";
 import RedButton from "../../components/RedButton";
 import "./DetailPage.css";
 
-const DetailPage = () => {
+const DetailPage: React.FC = () => {
+  const navigate = useNavigate();
+  const handleGetStarted = () => {
+    navigate("/trailer");
+  };
+
   return (
     <>
       <section className="relative overflow-hidden flex flex-col items-center background p-3 h-full">
@@ -16,9 +23,9 @@ const DetailPage = () => {
               stroke="black"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="3"
                 d="M7 16l-4-4m0 0l4-4m-4 4h18"
               />
             </svg>
@@ -44,8 +51,8 @@ const DetailPage = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-xl mb-4 font-bold">Overview</h3>{" "}
-            <p className="">
+            <h3 className="text-xl mb-4 font-bold">Overview</h3>
+            <p className="font-poppins font-thin">
               The mercurial villain Loki resumes his role as the God of Mischief
               in a new series that takes place after the events of “Avengers:
               Endgame”. <span style={{ color: "red" }}>See more …</span>
@@ -64,8 +71,8 @@ const DetailPage = () => {
             <p className="col-start-2 col-end-3 row-start-2 row-end-3">
               English, German, Spanish
             </p>
-          </div>{" "}
-          <RedButton buttonName="Watch Trailer"></RedButton>
+          </div>
+          <RedButton buttonName="Watch Trailer" onClick={handleGetStarted} />
         </div>
         <BottomNavBar />
       </section>

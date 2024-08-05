@@ -32,7 +32,7 @@ const Home = () => {
   ];
 
   return (
-    <section className="flex flex-col h-full bg-white">
+    <section className="flex flex-col h-full ">
       <h1 className="header-home text-3xl text-gray-950 mt-16 ml-6 mb-2">
         Welcome!
       </h1>

@@ -27,7 +27,7 @@ module.exports = {
           primary: "#FC2121", // Definiert die Primärfarbe im DaisyUI-Theme
           secondary: "#97AABD",
           accent: "#A4A3A3",
-          neutral: "#000",
+          neutral: "#fff",
           "base-100": "#fff",
         },
       },

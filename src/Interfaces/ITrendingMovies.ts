@@ -1,11 +1,11 @@
 export interface ITrendingMovies {
   page: number;
-  results: Result[];
+  results: IResult[];
   total_pages: number;
   total_results: number;
 }
 
-export interface Result {
+export interface IResult {
   backdrop_path: string;
   id: number;
   title: string;

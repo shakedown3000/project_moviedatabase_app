@@ -6,3 +6,7 @@
 .text-red {
   color: #fc2121;
 }
+
+.carousel-item img {
+  height: 100% !important;
+}

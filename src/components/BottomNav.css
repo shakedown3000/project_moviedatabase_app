@@ -1,5 +1,4 @@
 .bottom-wrapper {
-  position: absolute;
   bottom: 0;
   z-index: 1000;
   display: flex;
@@ -18,17 +17,16 @@
   align-items: center;
   position: relative;
   margin-right: 10px;
-}
-
-.icon-container {
   color: #97aabd;
 }
 
 .icon-container:hover {
   color: #fc2121;
+  cursor: pointer;
 }
+
 .text {
-  font-family: "Poppins-Headline";
+  /* font-family: "Poppins-Headline"; */
   font-size: 0.9rem;
   visibility: hidden;
   opacity: 0;

@@ -1,12 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js,ts,tsx}"], // Einschließlich TypeScript-Dateien, falls verwendet
+  content: ["./src/**/*.{html,js,ts,tsx}"],
 
   theme: {
     extend: {
       colors: {
         customlightgray: "#FBF8FF",
         customRed: "#FC2121",
+      },
+      fontFamily: {
+        poppins: ["Poppins-Thin", "sans-serif"],
+      },
+      fontWeight: {
+        thin: 200,
       },
     },
     screens: {

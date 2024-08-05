@@ -5,10 +5,7 @@
     rgba(252, 33, 33, 0.856) 40%,
     rgba(241, 241, 241, 1) 100%
   );
-}
-
-.h-50 {
-  height: 50%;
+  overflow: hidden;
 }
 
 .custom-bgc {
@@ -18,7 +15,7 @@
 }
 
 .custom-shadow:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* animation */

@@ -116,8 +116,8 @@ const GalleryTrendingMovies: React.FC<GalleryTrendingMoviesProps> = ({
   movies,
 }) => {
   return (
-    <div>
-      <div className="carousel h-2/4 max-w-80 ml-8 rounded-3xl">
+    <div className="h-2/5">
+      <div className="carousel h-3/5 max-w-80 ml-8 rounded-3xl">
         {movies.map((movie, index) => (
           <div
             id={`item${index + 1}`}
@@ -129,7 +129,7 @@ const GalleryTrendingMovies: React.FC<GalleryTrendingMoviesProps> = ({
             <Link to={`/detail/${movie.id}`}>
               <div className="bg-black bg-opacity-50 text-white p-10 h-full w-full">
                 <h2 className="text-2xl font-bold mt-6">{movie.title}</h2>
-                <p className="text-yellow-300 text-right mt-10">
+                <p className="text-yellow-300 text-right mt-0">
                   Rating: {movie.vote_average.toFixed(1)}/10
                 </p>
               </div>

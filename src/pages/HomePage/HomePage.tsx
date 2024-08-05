@@ -125,6 +125,7 @@ import "./HomePage.css";
 import MovieImage from "../../components/MovieImage";
 import { TrendingMovieContext } from "../../context/Context";
 import { ITrendingMovies } from "../../Interfaces/ITrendingMovies";
+import GalleryTrendingMovies from "../../components/GalleryTrendingMovies/GalleryTrendingMovies";
 
 const Home = () => {
   const trendingMovieContext = useContext(TrendingMovieContext);
@@ -194,30 +195,9 @@ const Home = () => {
           ))}
         </section>
       ) : (
-        <section className="mb-20 flex-col carousel w-full">
-          {trendingMovieContext.movieTrendingData.map((movie, index) => (
-            <div
-              id={`item${index + 1}`}
-              key={index}
-              className="carousel-item w-full">
-              <MovieImage
-                src={movie.poster_path}
-                alt={movie.title}
-                title={movie.title}
-                release_date={movie.release_date.toString()}
-                vote_average={movie.vote_average}
-              />
-            </div>
-          ))}
-
-          <div className="flex w-full justify-center gap-2 py-2">
-            {trendingMovieContext.movieTrendingData.map((_, index) => (
-              <a href={`#item${index + 1}`} key={index} className="btn btn-xs">
-                {index + 1}
-              </a>
-            ))}
-          </div>
-        </section>
+        <GalleryTrendingMovies
+          movies={trendingMovieContext.movieTrendingData}
+        />
       )}
       <BottomNavBar />
     </section>

@@ -18,7 +18,7 @@ import { ISearchMovie } from "./Interfaces/ISearchMovie";
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const [searching, setSearching] = useState<ISearchMovie[] | null>(null);
-  const [movieTrendingData, setMovieTrendingData] = useState<IResult | null>(
+  const [movieTrendingData, setMovieTrendingData] = useState<IResult[] | null>(
     null
   );
 

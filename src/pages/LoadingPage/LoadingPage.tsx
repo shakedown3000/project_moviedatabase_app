@@ -13,7 +13,7 @@ const LoadingPage = () => {
   }, []);
 
   return (
-    <section className="loader">
+    <section className="loader h-full">
       <h1 className="">.MOV</h1>
     </section>
   );

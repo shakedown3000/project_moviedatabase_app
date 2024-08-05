@@ -1,31 +1,12 @@
 .bottom-wrapper {
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 15px;
 }
-
-/* 
-.icon-container {
-  position: relative;
-  display: inline-block;
-}
-
-.text {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translateY(-50%);
-  margin-left: 10px;
-}
-
-.icon-container:hover .text {
-  visibility: visible;
-  opacity: 1;
-} */
 
 .bottom {
   display: flex;
@@ -68,8 +49,3 @@
 .icon-container:hover .svg {
   fill: #fc2121;
 }
-
-/* .custom-shadow {
-  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 -2px 4px -1px rgba(0, 0, 0, 0.06);
-} */

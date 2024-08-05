@@ -1,4 +1,5 @@
 import BottomNavBar from "../../components/BottomNav";
+import RedButton from "../../components/RedButton";
 import "./DetailPage.css";
 
 const DetailPage = () => {
@@ -64,24 +65,9 @@ const DetailPage = () => {
               English, German, Spanish
             </p>
           </div>{" "}
-          <button className="btn btn-wide">
-            {" "}
-            <svg
-              className="h-6 w-6 text-red-500"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              {" "}
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-            Watch Trailer
-          </button>
-          <BottomNavBar />
+          <RedButton buttonName="Watch Trailer"></RedButton>
         </div>
+        <BottomNavBar />
       </section>
     </>
   );

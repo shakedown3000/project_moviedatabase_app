@@ -57,3 +57,13 @@ a:hover {
 .lightgray-background-search {
   background-color: #fbf8ff;
 }
+
+.custom-bgc {
+  background-color: #fc2121 !important;
+  color: white !important;
+  border: none;
+}
+
+.custom-shadow:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}

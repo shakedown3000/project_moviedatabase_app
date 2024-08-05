@@ -127,9 +127,9 @@ const GalleryTrendingMovies: React.FC<GalleryTrendingMoviesProps> = ({
               backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`,
             }}>
             <Link to={`/detail/${movie.id}`}>
-              <div className="bg-black bg-opacity-50 text-white p-4 h-full w-full">
+              <div className="bg-black bg-opacity-50 text-white p-10 h-full w-full">
                 <h2 className="text-2xl font-bold mt-6">{movie.title}</h2>
-                <p className="text-yellow-300 text-right mt-20">
+                <p className="text-yellow-300 text-right mt-10">
                   Rating: {movie.vote_average.toFixed(1)}/10
                 </p>
               </div>

@@ -15,7 +15,7 @@ const DetailPage: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const trailerContext = useContext(TrailerContext);
 
-  console.log(movieDetail);
+
 
   const navigate = useNavigate();
   const handleGetStarted = () => {
@@ -58,7 +58,24 @@ const DetailPage: React.FC = () => {
     .then((response) => trailerContext?.setTrailer(response))
     .catch((err) => console.error(err));
 
-  ///--------
+  ///-------- GenreFilter-----
+
+  const optionsGenre = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOGQ4NDk0NDY0ZmRjOGYzZWIxOWVmZWIxZWU5OTFjZSIsIm5iZiI6MTcyMjg0OTc0Mi44MDk4NjIsInN1YiI6IjY2YjA3ZmRiZTYyZTljNTgxZjJmNDYzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9Fv4TnFpeNABAlSf4FvvqEmxTVEggxnuOYXjUB4utPk",
+    },
+  };
+
+  fetch(
+    "https://api.themoviedb.org/3/discover/movie?include_with_genres=horror",
+    optionsGenre
+  )
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
 
   const getMappedGenreName = (genreName: string) => {
     return genreMap[genreName] || genreName;

@@ -38,24 +38,24 @@ const DetailPage: React.FC = () => {
   }, []);
 
   //--------------Trailer
+  useEffect(() => {
+    const optionsTrailer = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOGQ4NDk0NDY0ZmRjOGYzZWIxOWVmZWIxZWU5OTFjZSIsIm5iZiI6MTcyMjg0Mzg4Mi40NTgwMjcsInN1YiI6IjY2YjA3ZmRiZTYyZTljNTgxZjJmNDYzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.avIT52XMk3Qiss0Jdm6Mh_RahyN644PvBugIR1SELTk",
+      },
+    };
 
-  const optionsTrailer = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOGQ4NDk0NDY0ZmRjOGYzZWIxOWVmZWIxZWU5OTFjZSIsIm5iZiI6MTcyMjg0Mzg4Mi40NTgwMjcsInN1YiI6IjY2YjA3ZmRiZTYyZTljNTgxZjJmNDYzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.avIT52XMk3Qiss0Jdm6Mh_RahyN644PvBugIR1SELTk",
-    },
-  };
-
-  fetch(
-    `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`,
-    optionsTrailer
-  )
-    .then((response) => response.json())
-    .then((response) => trailerContext?.setTrailer(response))
-    .catch((err) => console.error(err));
-
+    fetch(
+      `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`,
+      optionsTrailer
+    )
+      .then((response) => response.json())
+      .then((response) => trailerContext?.setTrailer(response))
+      .catch((err) => console.error(err));
+  }, []);
   const getMappedGenreName = (genreName: string) => {
     return genreMap[genreName] || genreName;
   };

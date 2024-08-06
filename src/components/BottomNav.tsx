@@ -2,7 +2,7 @@ import "./BottomNav.css";
 
 const BottomNavBar = () => {
   return (
-    <section className="bottom-wrapper bottom-1 bg-white overflow-hidden py-4 ">
+    <section className="bottom-wrapper absolute bottom-0 left-0 right-0 bg-white overflow-hidden py-4 ">
       <div className="bottom">
         <div className="icon-container">
           <svg

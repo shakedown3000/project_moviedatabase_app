@@ -1,14 +1,16 @@
+import { Result } from "../../Interfaces/ISearchMovie";
 import "./SingleMovie.css/";
+interface SingleMoviesProps {
+  movie: Result;
+}
 
-const SingleMovies = () => {
+const SingleMovies: React.FC<SingleMoviesProps> = ({ movie }) => {
   return (
     <section className="flex w-full p-6 gap-5">
       <img className="w-auto" src="/Movie_Picture.png" alt="test"></img>
       <div>
         <div className="flex">
-          <h3 className="text-xl mb-4 font-bold">
-            The Falcon and the Winter Soldier
-          </h3>
+          <h3 className="text-xl mb-4 font-bold">{movie.title}</h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -25,17 +27,16 @@ const SingleMovies = () => {
         </div>
 
         <div className="details_movie_info flex justify-between items-center gap-0.5">
-          <img src="/public/Star.svg" alt="Star" className="mr-2" />
-
-          <p className="font-bold">8.5</p>
+          <img src="/public/Star.svg" alt="Star" />
+          <p className="font-bold">{movie.vote_average.toFixed(1)}</p>
           <p>•</p>
-          <p>2021</p>
+          <p>{movie.release_date.toString().split("-")[0]}</p>
           <p>•</p>
-          <p>Action</p>
+          {/* Brauchen Enum */}
+          <p>{movie.genre_ids.join(", ")}</p>
           <p>•</p>
           {/* Hier bitte auf die Zeitumwandlung achten! */}
-          <p>2h</p>
-          <p>38</p>
+          <p>Dauer</p>
         </div>
       </div>
     </section>

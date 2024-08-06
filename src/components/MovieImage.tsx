@@ -20,7 +20,8 @@ const MovieImage: React.FC<MovieImageProps> = ({
     <section className="">
       <div
         className="movieImage hero rounded-3xl bg-cover bg-top h-full"
-        style={{ backgroundImage: `url(${backgroundImage})` }}>
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
         <section className="hero-overlay bg-opacity-30 ">
           <div className="text-white text-m mb-2 text-center mr-3 mt-10 ml-3  ">
             {title}

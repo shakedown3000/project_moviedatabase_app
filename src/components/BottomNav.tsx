@@ -2,7 +2,7 @@ import "./BottomNav.css";
 
 const BottomNavBar = () => {
   return (
-    <section className="bottom-wrapper bottom-1 bg-white overflow-hidden py-4 ">
+    <section className="bottom-wrapper absolute bottom-0 left-0 right-0 bg-white overflow-hidden py-4 ">
       <div className="bottom">
         <div className="icon-container">
           <svg
@@ -14,8 +14,7 @@ const BottomNavBar = () => {
             stroke="currentColor"
             fill="none"
             stroke-linecap="round"
-            stroke-linejoin="round"
-          >
+            stroke-linejoin="round">
             {" "}
             <path stroke="none" d="M0 0h24v24H0z" />{" "}
             <polyline points="5 12 3 12 12 3 21 12 19 12" />{" "}
@@ -36,8 +35,7 @@ const BottomNavBar = () => {
             stroke="currentColor"
             fill="none"
             stroke-linecap="round"
-            stroke-linejoin="round"
-          >
+            stroke-linejoin="round">
             {" "}
             <path stroke="none" d="M0 0h24v24H0z" />{" "}
             <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7" />
@@ -56,8 +54,7 @@ const BottomNavBar = () => {
             stroke="currentColor"
             fill="none"
             stroke-linecap="round"
-            stroke-linejoin="round"
-          >
+            stroke-linejoin="round">
             {" "}
             <path stroke="none" d="M0 0h24v24H0z" />{" "}
             <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />{" "}
@@ -77,8 +74,7 @@ const BottomNavBar = () => {
             stroke="currentColor"
             stroke-width="1.5"
             stroke-linecap="round"
-            stroke-linejoin="round"
-          >
+            stroke-linejoin="round">
             {" "}
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />{" "}
             <circle cx="12" cy="7" r="4" />

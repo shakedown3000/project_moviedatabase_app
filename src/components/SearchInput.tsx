@@ -1,42 +1,39 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { SearchContext } from "../context/Context";
-const SearchInput = () => {
-  const [search, setSearch] = useState<string>("");
+import { useNavigate } from "react-router-dom";
 
+const SearchInput: React.FC = () => {
+  const [searchInput, setSearchInput] = useState<string>("");
   const searchContext = useContext(SearchContext);
+  const navigate = useNavigate();
 
   const check = (event: React.FormEvent<HTMLFormElement>) => {
-    event?.preventDefault();
-    if (search) {
-      useEffect(() => {
-        console.log("hello");
-        const options = {
-          method: "GET",
-          headers: {
-            accept: "application/json",
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOGQ4NDk0NDY0ZmRjOGYzZWIxOWVmZWIxZWU5OTFjZSIsIm5iZiI6MTcyMjg0Mzg1MC41ODI4NTMsInN1YiI6IjY2YjA3ZmRiZTYyZTljNTgxZjJmNDYzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._jO_1n8Ns-27315mVLZMugsW4e6uFIs6UOJO8rYFLH0`,
-          },
-        };
-        fetch(
-          `https://api.themoviedb.org/3/search/movie?query=${search}`,
-          options
-        )
-          .then((res) => res.json())
-          .then((data) => searchContext?.setSearching(data))
-          .catch((err) => console.error("fetch klappt nicht ", err));
-      }, [searchContext]);
-    }
-    if (searchContext?.searching) {
-      return <div>loading</div>;
+    event.preventDefault();
+
+    if (searchInput) {
+      const options = {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOGQ4NDk0NDY0ZmRjOGYzZWIxOWVmZWIxZWU5OTFjZSIsIm5iZiI6MTcyMjg0Mzg1MC41ODI4NTMsInN1YiI6IjY2YjA3ZmRiZTYyZTljNTgxZjJmNDYzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._jO_1n8Ns-27315mVLZMugsW4e6uFIs6UOJO8rYFLH0`,
+        },
+      };
+      fetch(
+        `https://api.themoviedb.org/3/search/movie?query=${searchInput}`,
+        options
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          searchContext?.setSearching(data);
+          // Navigiere zur neuen Seite & übertrage Suchergebnisse
+          navigate("/genre", { state: { results: data } });
+        })
+        .catch((err) => console.error("Fetch klappt nicht ", err));
     }
   };
 
-  // console.log(search);
-  // console.log(searchContext?.searching);
-
   return (
     <form
-      // action="/search"
       onSubmit={check}
       className="flex justify-center align-center w-full p-6">
       <div className="relative w-full">
@@ -46,13 +43,13 @@ const SearchInput = () => {
           className="w-full h-12 shadow-sm p-4 rounded-lg text-gray-400 placeholder-gray-500 font-thin lightgray-background-search"
           placeholder="Search Movie ..."
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            setSearch(event.target.value)
+            setSearchInput(event.target.value)
           }
-          value={search}
+          value={searchInput}
         />
         <button
           type="submit"
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 flex items-center justify-center p-1 t ">
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 flex items-center justify-center p-1">
           <svg
             className="h-4 w-4 text-gray-50"
             xmlns="http://www.w3.org/2000/svg"

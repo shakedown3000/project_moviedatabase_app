@@ -31,8 +31,8 @@ const SearchInput = () => {
     }
   };
 
-  console.log(search);
-  console.log(searchContext?.searching);
+  // console.log(search);
+  // console.log(searchContext?.searching);
 
   return (
     <form

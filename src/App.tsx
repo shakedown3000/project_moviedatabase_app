@@ -4,6 +4,7 @@ import LoadingPage from "./pages/LoadingPage/LoadingPage";
 import {
   LoadingContext,
   SearchContext,
+  TrailerContext,
   TrendingMovieContext,
 } from "./context/Context";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -14,6 +15,7 @@ import DetailPage from "./pages/DetailPage/DetailPage";
 import TrailerPage from "./pages/TrailerPage/TrailerPage";
 import { IResult } from "./Interfaces/ITrendingMovies";
 import { ISearchMovie } from "./Interfaces/ISearchMovie";
+import { IMovieTrailer } from "./Interfaces/IMovieTrailer";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -21,27 +23,30 @@ function App() {
   const [movieTrendingData, setMovieTrendingData] = useState<IResult[] | null>(
     null
   );
+  const [trailer, setTrailer] = useState<IMovieTrailer[] | null>(null);
 
   return (
     <>
       <LoadingContext.Provider value={{ loading, setLoading }}>
         <SearchContext.Provider value={{ searching, setSearching }}>
-          <TrendingMovieContext.Provider
-            value={{ movieTrendingData, setMovieTrendingData }}>
-            {loading ? (
-              <LoadingPage />
-            ) : (
-              <BrowserRouter>
-                <Routes>
-                  <Route path="/" element={<IntroPage />} />
-                  <Route path="/home" element={<Home />} />
-                  <Route path="/genre" element={<GenrePage />} />
-                  <Route path="/detail/:id" element={<DetailPage />} />
-                  <Route path="/trailer" element={<TrailerPage />} />
-                </Routes>
-              </BrowserRouter>
-            )}
-          </TrendingMovieContext.Provider>
+          <TrailerContext.Provider value={{ trailer, setTrailer }}>
+            <TrendingMovieContext.Provider
+              value={{ movieTrendingData, setMovieTrendingData }}>
+              {loading ? (
+                <LoadingPage />
+              ) : (
+                <BrowserRouter>
+                  <Routes>
+                    <Route path="/" element={<IntroPage />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/genre" element={<GenrePage />} />
+                    <Route path="/detail/:id" element={<DetailPage />} />
+                    <Route path="/trailer/:id" element={<TrailerPage />} />
+                  </Routes>
+                </BrowserRouter>
+              )}
+            </TrendingMovieContext.Provider>
+          </TrailerContext.Provider>
         </SearchContext.Provider>
       </LoadingContext.Provider>
     </>

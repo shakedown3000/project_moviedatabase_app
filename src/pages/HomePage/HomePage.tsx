@@ -145,7 +145,7 @@ const Home = () => {
         },
       };
       fetch(
-        "https://api.themoviedb.org/3/trending/movie/day?language=en-US&",
+        "https://api.themoviedb.org/3/trending/movie/week?language=en-US&",
         options
       )
         .then((response) => response.json())

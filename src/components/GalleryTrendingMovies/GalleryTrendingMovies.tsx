@@ -9,8 +9,8 @@ const GalleryTrendingMovies: React.FC<GalleryTrendingMoviesProps> = ({
   movies,
 }) => {
   return (
-    <div className="h-2/5">
-      <div className="carousel h-3/5 max-w-80 ml-8 rounded-3xl">
+    <div className="h-2/5 mt-6">
+      <div className="carousel h-3/5 w-10/12 ml-8 rounded-3xl">
         {movies.map((movie, index) => (
           <div
             id={`item${index + 1}`}
@@ -31,7 +31,7 @@ const GalleryTrendingMovies: React.FC<GalleryTrendingMoviesProps> = ({
         ))}
       </div>
       <div className="flex justify-center gap-2 py-2 ">
-        {movies.map((_, index) => (
+        {movies.map((_movie, index) => (
           <a
             href={`#item${index + 1}`}
             className="btn btn-xs btn-ghost"

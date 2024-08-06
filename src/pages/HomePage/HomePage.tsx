@@ -145,7 +145,7 @@ const Home = () => {
         },
       };
       fetch(
-        "https://api.themoviedb.org/3/trending/movie/week?language=en-US&",
+        "https://api.themoviedb.org/3/trending/movie/day?language=en-US&",
         options
       )
         .then((response) => response.json())
@@ -182,7 +182,7 @@ const Home = () => {
         </p>
       </section>
       {showAllImages ? (
-        <section className="p-4 grid grid-cols-2 gap-4 mb-20 bg-white">
+        <section className="p-4 grid grid-cols-2 gap-4 mb-20 ml-3 mr-3 bg-white">
           {trendingMovieContext.movieTrendingData.map((movie, index) => (
             <MovieImage
               key={index}
@@ -199,7 +199,9 @@ const Home = () => {
           movies={trendingMovieContext.movieTrendingData}
         />
       )}
-      <BottomNavBar />
+      <footer className="bottom-0 flex justify-center bg-amber-700">
+        <BottomNavBar />
+      </footer>
     </section>
   );
 };

@@ -1,0 +1,25 @@
+.trailer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.video-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+  transform-origin: center center;
+}
+
+.react-player {
+  width: 100%;
+  height: 100%;
+}

@@ -103,7 +103,6 @@ import { useContext } from "react";
 import { TrailerContext } from "../../context/Context";
 import ReactPlayer from "react-player";
 import "./TrailerPage.css";
-import { isButtonElement } from "react-router-dom/dist/dom";
 
 const TrailerPage = () => {
   const trailerContext = useContext(TrailerContext);
@@ -114,9 +113,9 @@ const TrailerPage = () => {
     ? `https://www.youtube.com/watch?v=${videoKey}`
     : "";
 
-  const handleBackClick = () => {
-    window.history.back();
-  };
+  // const handleBackClick = () => {
+  //   window.history.back();
+  // };
 
   return (
     <section className="trailer-container">

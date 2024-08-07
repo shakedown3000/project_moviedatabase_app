@@ -42,7 +42,7 @@ const Home: React.FC = () => {
     };
 
     fetchMovieData();
-  }, [trendingMovieContext]);
+  }, []);
 
   if (!trendingMovieContext?.movieTrendingData) {
     return <div>Loading...</div>;

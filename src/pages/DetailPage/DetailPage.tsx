@@ -97,7 +97,7 @@ const DetailPage: React.FC = () => {
           </div>
         </div>
         <div className="gradient-overlay"></div>
-        <div className="relative z-20 flex flex-col items-center justify-between w-full h-full px-4 pt-4 text-black h-60  mt-auto">
+        <div className="relative z-20 flex flex-col items-center justify-between w-full h-full px-4 pt-4 text-black h-60 mt-48">
           <div>
             <p className="text-center mb-1">Movie Details</p>
             <h2 className="h2-font-weight-black text-2xl text-center mb-2">

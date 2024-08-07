@@ -53,6 +53,52 @@
 
 // export default TrailerPage;
 
+// import { useContext } from "react";
+// import { TrailerContext } from "../../context/Context";
+// import ReactPlayer from "react-player";
+// import "./TrailerPage.css";
+
+// const TrailerPage = () => {
+//   const trailerContext = useContext(TrailerContext);
+//   const result = trailerContext?.trailer?.results;
+
+//   const videoKey = result?.[0]?.key;
+//   const videoUrl = videoKey
+//     ? `https://www.youtube.com/watch?v=${videoKey}`
+//     : "";
+
+//   return (
+//     <section className="trailer-container">
+//       {videoUrl ? (
+//         <div className="video-wrapper">
+//           <ReactPlayer
+//             url={videoUrl}
+//             className="react-player"
+//             width="393px"
+//             height="793px"
+//             controls
+//             playing
+//           />
+//         </div>
+//       ) : (
+//         // <div className="trailer-container">
+//         //   <div className="video-wrapper">
+//         //     <iframe
+//         //       src={`${videoUrl}`}
+//         //       frameBorder="0"
+//         //       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//         //       allowFullScreen
+//         //       title="Trailer"></iframe>
+//         //   </div>
+//         // </div>
+//         <p style={{ color: "white" }}>No video available</p>
+//       )}
+//     </section>
+//   );
+// };
+
+// export default TrailerPage;
+
 import { useContext } from "react";
 import { TrailerContext } from "../../context/Context";
 import ReactPlayer from "react-player";
@@ -78,6 +124,7 @@ const TrailerPage = () => {
             height="100%"
             controls
             playing
+            muted
           />
         </div>
       ) : (

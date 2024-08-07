@@ -128,7 +128,7 @@ const DetailPage: React.FC = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-xl mb-4 font-bold">Overview</h3>
+            <h3 className="text-xl mb-4 font-bold mt-6">Overview</h3>
 
             <p
               className={`font-poppins font-thin ${
@@ -147,8 +147,8 @@ const DetailPage: React.FC = () => {
               {isExpanded ? "See less…" : "See more…"}
             </button>
           </div>
-          <div className="border-red-500 grid grid-cols-2-[1fr_2fr] grid-rows-2 w-full gap-1">
-            <p className="font-bold col-start-1 col-end-2 row-start-1 row-end-2">
+          <div className="border-red-500 grid grid-cols-2-[1fr_2fr] grid-rows-2 w-full gap-2 mt-6">
+            <p className="font-bold col-start-1 col-end-2 row-start-1 row-end-2 ">
               Genres
             </p>
             <p className="col-start-2 col-end-3 row-start-1 row-end-2">
@@ -160,7 +160,7 @@ const DetailPage: React.FC = () => {
             <p className="font-bold col-start-1 col-end-2 row-start-2 row-end-3">
               Languages
             </p>
-            <p className="col-start-2 col-end-3 row-start-2 row-end-3">
+            <p className="col-start-2 col-end-3 row-start-2 row-end-3 mb-6">
               {movieDetail?.spoken_languages
                 .slice(0, 3)
                 .map((lang) => lang.name)

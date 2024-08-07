@@ -50,7 +50,7 @@ const Home: React.FC = () => {
 
   return (
     <section className="bg-white flex flex-col h-full relative p-6">
-      <h1 className="text-3xl text-gray-950 mt-16">Welcome!</h1>
+      <h1 className="text-3xl text-gray-950 mt-16 font-bold">Welcome!</h1>
       <SearchInput />
       <CategoryButtons />
       <div className="flex flex-col mt-16 mb-2 justify-between">

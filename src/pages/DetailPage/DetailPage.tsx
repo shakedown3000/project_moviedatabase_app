@@ -12,6 +12,7 @@ const genreMap: Record<string, string> = {
 
 const DetailPage: React.FC = () => {
   const [movieDetail, setMovieDetail] = useState<IMovieDetail | null>(null);
+
   const [isExpanded, setIsExpanded] = useState(false);
   const trailerContext = useContext(TrailerContext);
 
@@ -34,6 +35,7 @@ const DetailPage: React.FC = () => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
       .then((response) => response.json())
       .then((response) => setMovieDetail(response))
+
       .catch((err) => console.error(err));
   }, []);
 

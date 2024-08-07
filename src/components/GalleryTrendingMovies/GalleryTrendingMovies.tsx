@@ -1,45 +1,30 @@
-import { Link } from "react-router-dom";
-import { ITrendingMovies } from "../../Interfaces/ITrendingMovies";
+import React from "react";
+import { IResult } from "../../Interfaces/ITrendingMovies";
 
 interface GalleryTrendingMoviesProps {
-  movies: ITrendingMovies["results"];
+  movies: IResult[];
 }
 
 const GalleryTrendingMovies: React.FC<GalleryTrendingMoviesProps> = ({
   movies,
 }) => {
   return (
-    <div className="h-2/5 mt-6">
-      <div className="carousel h-3/5 w-10/12 ml-8 rounded-3xl">
-        {movies.map((movie, index) => (
-          <div
-            id={`item${index + 1}`}
-            className="carousel-item w-full h-96 bg-center bg-cover bg-no-repeat"
-            key={index}
-            style={{
-              backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`,
-            }}>
-            <Link to={`/detail/${movie.id}`}>
-              <div className="bg-black bg-opacity-50 text-white p-10 h-full w-full">
-                <h2 className="text-2xl font-bold mt-6">{movie.title}</h2>
-                <p className="text-yellow-300 text-right mt-6 ">
-                  Rating: {movie.vote_average.toFixed(1)}/10
-                </p>
-              </div>
-            </Link>
+    <div className="flex overflow-x-auto space-x-4 py-4">
+      {movies.slice(0, 4).map((movie, index) => (
+        <div
+          key={index}
+          className="flex-shrink-0 w-full h-64 bg-cover bg-top rounded-lg"
+          style={{
+            backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`,
+          }}
+        >
+          <div className="flex items-end justify-center h-full bg-gradient-to-t from-black via-transparent to-transparent rounded-lg p-2">
+            <h3 className="text-white text-lg text-center truncate">
+              {movie.title}
+            </h3>
           </div>
-        ))}
-      </div>
-      <div className="flex justify-center gap-2 py-2 ">
-        {movies.map((_movie, index) => (
-          <a
-            href={`#item${index + 1}`}
-            className="btn btn-xs btn-ghost"
-            key={index}>
-            {index + 1}
-          </a>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 };

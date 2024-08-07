@@ -30,7 +30,8 @@ const CategoryButtons = () => {
   };
 
   return (
-    <div className="px-6 w-full flex space-x-4">
+
+    <div className="w-full flex space-x-4">
       <button
         className={`flex-1 h-8 lightgray-background rounded-lg flex items-center justify-center shadow-sm ${
           selectedGenre === 28 ? "bg-gray-300" : ""

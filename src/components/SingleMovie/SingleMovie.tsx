@@ -54,7 +54,7 @@ interface SingleMoviesProps {
 
 const SingleMovies: React.FC<SingleMoviesProps> = ({ movie }) => {
   const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-  console.log(movie.genres);
+
   return (
     <NavLink to={`/detail/${movie.id}`}>
       <section className="p-6 gap-5 ">

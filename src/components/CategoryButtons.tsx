@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { SearchContext } from "../context/Context";
 
 const CategoryButtons = () => {
   const [selectedGenre, setSelectedGenre] = useState(null);
+  const searchContext = useContext(SearchContext);
 
   useEffect(() => {
     const optionsGenre = {
@@ -18,9 +20,10 @@ const CategoryButtons = () => {
       optionsGenre
     )
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => searchContext?.setSearching(data))
       .catch((err) => console.error(err));
   }, [selectedGenre]);
+  console.log(searchContext?.searching);
 
   const handleButtonClick = (genreId: any) => {
     setSelectedGenre(genreId);

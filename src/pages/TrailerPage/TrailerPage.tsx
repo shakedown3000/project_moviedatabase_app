@@ -134,7 +134,9 @@ const TrailerPage = () => {
           />
         </div>
       ) : (
-        <p style={{ color: "white" }}>No video available</p>
+        <p className="text-white flex justify-center items-center mt-96 ml-64 text-2xl">
+          No video available
+        </p>
       )}
     </section>
   );

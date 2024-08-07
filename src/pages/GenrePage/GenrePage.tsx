@@ -5,14 +5,14 @@ import CategoryButtons from "../../components/CategoryButtons";
 import SearchInput from "../../components/SearchInput";
 import SingleMovies from "../../components/SingleMovie/SingleMovie";
 
-import { IMovieDetail } from "../../Interfaces/IMovieDetails";
+// import { IMovieDetail } from "../../Interfaces/IMovieDetails";
 
-interface LocationState {
-  results?: IMovieDetail;
-}
+// interface LocationState {
+//   results?: IMovieDetail;
+// }
 
 const GenrePage: React.FC = () => {
-  const location = useLocation<LocationState>();
+  const location = useLocation();
 
   const results = location.state?.results;
 
@@ -26,7 +26,7 @@ const GenrePage: React.FC = () => {
       <CategoryButtons />
       <div className="flex-1 mt-10 overflow-y-auto">
         {results.results.length > 0 ? (
-          results.results.map((movie) => (
+          results.results.map((movie: any) => (
             <SingleMovies key={movie.id} movie={movie} />
           ))
         ) : (

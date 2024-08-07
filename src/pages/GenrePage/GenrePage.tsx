@@ -4,10 +4,12 @@ import BottomNavBar from "../../components/BottomNav";
 import CategoryButtons from "../../components/CategoryButtons";
 import SearchInput from "../../components/SearchInput";
 import SingleMovies from "../../components/SingleMovie/SingleMovie";
+
 import { IMovieDetail } from "../../Interfaces/IMovieDetails";
 
+
 interface LocationState {
-  results?: IMovieDetail;
+  results?: ISearchMovie;
 }
 
 const GenrePage: React.FC = () => {

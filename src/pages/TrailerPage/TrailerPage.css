@@ -1,28 +1,82 @@
+/* .trailer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 793px;
+  height: 393px;
+  background-color: black; 
+  transform: rotate(90deg);
+
+  overflow: hidden;
+} 
+
+ .react-player {
+  position: absolute;
+  top: 50;
+  left: 50;
+  height: 100%;
+  width: 100%;
+}  */
+/*
 .trailer-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50vw;
-  height: 80vh;
-  background-color: black; /* Optional: Background color for better contrast */
-  overflow: hidden; /* Ensure no scrollbars appear */
+  width: 793px; /* Adjust width as needed 
+  height: 393px; /* Adjust height as needed 
+  transform: rotate(90deg);
+  overflow: hidden;
+  position: relative; /* Ensure positioning context for child elements 
+}*/
+/* 
+.video-wrapper {
+  width: 100%;
+  height: 100%;
+  transform: rotate(
+    -90deg
+  );  
+  transform-origin: center;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Remove border if needed 
+} 
+
+.trailer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 793px;
+  height: 393px;
+  background-color: black; 
+  transform: rotate(90deg);
+  overflow: hidden;
+  position: relative; /* Ensure positioning context for child elements 
+}*/
+
+.trailer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 793px;
+  height: 393px;
+
+  transform: rotate(90deg);
 }
 
 .video-wrapper {
-  position: relative;
-  width: 50%;
-  height: 500%;
-  transform: rotate(90deg);
+  width: 100%;
+  height: 100%;
   transform-origin: center;
-  /* Adjusting dimensions due to rotation */
-  width: full; /* Height of the container becomes the width of the player */
-  height: 50%; /* Width of the container becomes the height of the player */
+  position: relative;
+  padding-top: 25.25%;
+  padding-left: 25%;
 }
 
 .react-player {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 50%;
 }

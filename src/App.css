@@ -10,8 +10,8 @@
 
 body {
   overflow: hidden;
-  margin: 5vh auto;
-  width: 390px;
+  /* margin: 5vh auto; */
+
   border: 1px solid black;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
   width: 393px;

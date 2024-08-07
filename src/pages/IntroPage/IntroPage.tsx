@@ -26,8 +26,10 @@ const IntroPage: React.FC = () => {
       {/* Unterer Teil */}
       <section className="absolute bottom-0 h-2/5 bg-white w-full flex flex-col items-center justify-center z-30">
         <div className="w-full p-6 flex flex-col items-center text-center">
-          <h1 className="text-2xl pt-10">Enjoy Your Movie Watch Everywhere</h1>
-          <p className="text-center w-72 py-8">
+          <h1 className="text-2xl pt-10 text-black">
+            Enjoy Your Movie Watch Everywhere
+          </h1>
+          <p className="text-center w-72 py-8 text-black ">
             Stream unlimited movies and TV shows on your phone,tablet, laptop,
             and TV.
           </p>

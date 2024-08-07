@@ -29,7 +29,7 @@ const IntroPage: React.FC = () => {
           <h1 className="text-2xl pt-10 text-black">
             Enjoy Your Movie Watch Everywhere
           </h1>
-          <p className="text-center w-72 py-8 text-black ">
+          <p className="text-center w-72 py-8">
             Stream unlimited movies and TV shows on your phone,tablet, laptop,
             and TV.
           </p>

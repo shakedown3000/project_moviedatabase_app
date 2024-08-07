@@ -2,12 +2,17 @@ import { Link, NavLink } from "react-router-dom";
 import { IMovieDetail } from "../../Interfaces/IMovieDetails";
 
 import "./SingleMovie.css/";
+import { ISearchMovie } from "../../Interfaces/ISearchMovie";
+
 interface SingleMoviesProps {
   movie: IMovieDetail;
 }
 
 const SingleMovies: React.FC<SingleMoviesProps> = ({ movie }) => {
   const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+
+  const runtime = movie.runtime;
+  console.log(runtime);
 
   return (
     <NavLink to={`/detail/${movie.id}`}>
@@ -26,8 +31,7 @@ const SingleMovies: React.FC<SingleMoviesProps> = ({ movie }) => {
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.2}
-            className="w-full icon-stroke icon-stroke-hover icon-fill-hover"
-          >
+            className="w-full icon-stroke icon-stroke-hover icon-fill-hover">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -37,11 +41,12 @@ const SingleMovies: React.FC<SingleMoviesProps> = ({ movie }) => {
           <div className="flex items-center justify-between col-start-2 col-span-2 w-full gap-2">
             <img className="w-4" src="/public/Star.svg" alt="Star" />
             <span className="font-bold">{movie.vote_average.toFixed(1)}</span>
+            <span>•</span>
             <span>{movie.release_date.toString().split("-")[0]}</span>
             <span>•</span>
             <span>Genre</span>
             <span>•</span>
-            <span>Runtime</span>
+            <span>{movie.runtime} min</span>
           </div>
         </div>
       </section>

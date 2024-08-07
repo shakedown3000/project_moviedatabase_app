@@ -29,3 +29,10 @@ interface ITrailer {
 }
 
 export const TrailerContext = createContext<ITrailer | null>(null);
+
+// interface ICategoryFilter {
+//   filter: ISearchMovie | null;
+//   setFilter: React.Dispatch<React.SetStateAction<ISearchMovie | null>>;
+// }
+
+// export const CategoryContext = createContext<ICategoryFilter | null>(null);

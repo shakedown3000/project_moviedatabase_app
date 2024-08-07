@@ -1,14 +1,13 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import BottomNavBar from "../../components/BottomNav";
 import CategoryButtons from "../../components/CategoryButtons";
 import SearchInput from "../../components/SearchInput";
-import "./HomePage.css";
-import MovieImage from "../../components/MovieImage";
 import { TrendingMovieContext } from "../../context/Context";
-import { ITrendingMovies } from "../../Interfaces/ITrendingMovies";
+import { ITrendingMovies, IResult } from "../../Interfaces/ITrendingMovies";
+import SingleTrendingMovie from "../../components/MovieImage";
 import GalleryTrendingMovies from "../../components/GalleryTrendingMovies/GalleryTrendingMovies";
 
-const Home = () => {
+const Home: React.FC = () => {
   const trendingMovieContext = useContext(TrendingMovieContext);
   const [showAllImages, setShowAllImages] = useState(false);
 
@@ -33,7 +32,7 @@ const Home = () => {
         .then((data: ITrendingMovies) => {
           if (data.results.length > 0) {
             trendingMovieContext?.setMovieTrendingData(
-              data.results.slice(0, 4)
+              data.results.slice(0, 10)
             );
           }
         })
@@ -50,39 +49,35 @@ const Home = () => {
   }
 
   return (
-    <section className="flex flex-col h-full relative">
-      <h1 className="header-home text-3xl text-gray-950 mt-16 ml-6 mb-2">
-        Welcome!
-      </h1>
+    <section className="bg-white flex flex-col h-full relative p-6">
+      <h1 className="text-3xl text-gray-950 mt-16">Welcome!</h1>
       <SearchInput />
       <CategoryButtons />
-      <section className="flex flex-row mt-16 ml-6 mb-2 justify-between">
-        <h4 className="text-black">Trending Movies</h4>
-
-        <p className="text-red mr-6 cursor-pointer" onClick={toggleView}>
-          {showAllImages ? "Gallery" : "See all"}
-        </p>
-      </section>
-
+      <div className="flex flex-col mt-16 mb-2 justify-between">
+        <div className="flex justify-between content-top">
+          <h4 className="text-black">Trending Movies</h4>
+          <p className="text-red-500 cursor-pointer" onClick={toggleView}>
+            {showAllImages ? "Gallery" : "See all"}
+          </p>
+        </div>
+      </div>
       {showAllImages ? (
-        <section className="p-4 grid grid-cols-2 gap-4 mb-20 ml-3 mr-3 bg-white">
-          {trendingMovieContext.movieTrendingData.map((movie, index) => (
-            <MovieImage
-              key={index}
-              src={movie.poster_path}
-              alt={movie.title}
-              title={movie.title}
-              release_date={movie.release_date.toString()}
-              vote_average={movie.vote_average}
-            />
-          ))}
-        </section>
+        <div className="flex flex-wrap overflow-y-auto py-2">
+          {trendingMovieContext.movieTrendingData.map(
+            (movie: IResult, index: number) => (
+              <div key={index} className="w-1/2 p-2">
+                <SingleTrendingMovie movie={movie} />
+              </div>
+            )
+          )}
+        </div>
       ) : (
-        <GalleryTrendingMovies
-          movies={trendingMovieContext.movieTrendingData}
-        />
+        <div className="">
+          <GalleryTrendingMovies
+            movies={trendingMovieContext.movieTrendingData}
+          />
+        </div>
       )}
-
       <BottomNavBar />
     </section>
   );
@@ -95,13 +90,18 @@ export default Home;
 // import CategoryButtons from "../../components/CategoryButtons";
 // import SearchInput from "../../components/SearchInput";
 // import "./HomePage.css";
-// import MovieImage from "../../components/MovieImage";
 // import { TrendingMovieContext } from "../../context/Context";
 // import { ITrendingMovies } from "../../Interfaces/ITrendingMovies";
+// import MovieImage from "../../components/MovieImage";
+// import { IResult } from "../../Interfaces/ITrendingMovies";
 
 // const Home = () => {
 //   const trendingMovieContext = useContext(TrendingMovieContext);
 //   const [showAllImages, setShowAllImages] = useState(false);
+
+//   interface MovieGalleryProps {
+//     movies: IResult[];
+//   }
 
 //   const toggleView = () => {
 //     setShowAllImages(!showAllImages);
@@ -117,15 +117,16 @@ export default Home;
 //         },
 //       };
 //       fetch(
-//         "https://api.themoviedb.org/3/trending/movie/week?language=en-US&",
+//         "https://api.themoviedb.org/3/trending/movie/day?language=en-US&",
 //         options
 //       )
 //         .then((response) => response.json())
 //         .then((data: ITrendingMovies) => {
 //           if (data.results.length > 0) {
 //             trendingMovieContext?.setMovieTrendingData(
-//               data.results.slice(0, 4)
-//             ); // Only take the first 4 results
+//               // Daten werden gespeichert in movietrendingdata von Type IResult[]
+//               data.results.slice(0, 10)
+//             );
 //           }
 //         })
 //         .catch((error) => {
@@ -138,73 +139,52 @@ export default Home;
 
 //   if (!trendingMovieContext?.movieTrendingData) {
 //     return <div>Loading...</div>;
-//   }
 
+//   }
 //   return (
-//     <section className="flex flex-col h-full bg-white">
-//       <h1 className="header-home text-3xl text-gray-950 mt-16 ml-6 mb-2">
-//         Welcome!
-//       </h1>
+//     <section className="bg-white flex flex-col h-full relative p-6">
+//       <h1 className="header-home text-3xl text-gray-950 mt-16">Welcome!</h1>
 //       <SearchInput />
 //       <CategoryButtons />
-//       <section className="flex flex-row mt-16 ml-6 mb-2 justify-between">
+//       <div className="flex flex-col mt-16 mb-2 justify-between">
 //         <h4 className="text-black">Trending Movies</h4>
-//         <p className="text-red mr-6 cursor-pointer" onClick={toggleView}>
-//           {showAllImages ? "Gallery" : "See all"}
-//         </p>
-//       </section>
-//       {showAllImages ? (
-//         <section className="p-4 grid grid-cols-2 gap-4 mb-20 bg-white">
-//           {trendingMovieContext.movieTrendingData.map((movie, index) => (
-//             <MovieImage
-//               key={index}
-//               src={movie.poster_path}
-//               alt={movie.title}
-//               title={movie.title}
-//               release_date={movie.release_date.toString()}
-//               vote_average={movie.vote_average}
-//             />
+//         <div className="flex flex-wrap">
+//           {trendingMovieContext?.movieTrendingData.map((movie, index) => (
+//             <MovieImage key={index} movie={movie} />
 //           ))}
-//         </section>
-//       ) : (
-//         <section className="mb-20 flex-col carousel w-full">
-//           {trendingMovieContext.movieTrendingData.map((movie, index) => (
-//             // <div
-//             //   id={`item${index + 1}`}
-//             //   key={index}
-//             //   className="carousel-item w-full ">
-//             //   <MovieImage
-//             //     src={movie.poster_path}
-//             //     alt={movie.title}
-//             //     title={movie.title}
-//             //     release_date={movie.release_date.toString()}
-//             //     vote_average={movie.vote_average}
-//             //   />
-//             // </div>    <div id="item4" className="carousel-item w-full">
-//             <div
-//               id={`item${index + 1}`}
-//               className="carousel-item w-full"
-//               key={index}>
-//               <img
-//                 src={movie.poster_path}
-//                 alt={movie.title}
-//                 className="w-full"
-//               />
-//             </div>
-//           ))}
+//         </div>
+{
+  /* <GalleryTrendingMovies
+          movies={trendingMovieContext.movieTrendingData}
+        /> */
+}
+//       </div>
 
-//           <div className="flex w-full justify-center gap-2 py-2">
-//             {trendingMovieContext.movieTrendingData.map((_, index) => (
-//               <a href={`#item${index + 1}`} key={index} className="btn btn-xs">
-//                 {index + 1}
-//               </a>
-//             ))}
-//           </div>
-//         </section>
-//       )}
 //       <BottomNavBar />
 //     </section>
 //   );
 // };
 
 // export default Home;
+
+// <section className="bg-white flex flex-col h-full relative p-6">
+//       <h1 className="header-home text-3xl text-gray-950 mt-16">Welcome!</h1>
+//       <SearchInput />
+//       <CategoryButtons />
+//       <div className="flex mt-16 mb-2 justify-between">
+//         <h4 className="text-black">Trending Movies</h4>
+//         <p className="text-red cursor-pointer" onClick={toggleView}>
+//           {showAllImages ? "Gallery" : "See all"}
+//         </p>
+//       </div>
+
+//       {showAllImages ? (
+//         <GalleryTrendingMovies
+//           movies={trendingMovieContext.movieTrendingData}
+//         />
+//       ) : (
+//         <div>{/* Andere Ansicht hier */}</div>
+//       )}
+
+//       <BottomNavBar />
+//     </section>

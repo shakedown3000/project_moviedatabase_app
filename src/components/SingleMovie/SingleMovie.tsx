@@ -44,23 +44,27 @@
 
 // export default SingleMovies;
 
+import { Link, NavLink } from "react-router-dom";
+import { IMovieDetail } from "../../Interfaces/IMovieDetails";
 
-import { Result } from "../../Interfaces/ISearchMovie";
 import "./SingleMovie.css/";
 interface SingleMoviesProps {
-  movie: Result;
+  movie: IMovieDetail;
 }
 
 const SingleMovies: React.FC<SingleMoviesProps> = ({ movie }) => {
+  const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+
   return (
-    <section className="p-6 gap-5">
-      <div className="grid grid-cols-[repeat(11,2fr)] grid-rows-[repeat(3,1fr)] gap-1 h-36 p-4">
-        <div
-            className="col-start-1 col-end-4 col-span-3 row-start-1 row-span-3 h-full w-full bg-contain bg-center bg-no-repeat"
+    <NavLink to={`/detail/${movie.id}`}>
+      <section className="p-6 gap-5 ">
+        <div className="grid grid-cols-[repeat(11,2fr)] grid-rows-[repeat(3,1fr)] gap-1 h-36 p-4">
+          <div
+            className="col-start-1 col-end-4 col-span-3 row-start-1 row-span-3 h-full w-full bg-contain bg-center bg-no-repeat "
             style={{
-              backgroundImage: 'url("/Movie_Picture.png")',
-            }}
-        ></div>
+              backgroundImage: `url(${imageUrl})`,
+            }}></div>
+
 
         <div className= "col-start-4 col-end-11 row-start-1 row-end-2">
           <h3 className=" text-xl mb-4 font-bold">{movie.title}</h3>
@@ -96,24 +100,23 @@ const SingleMovies: React.FC<SingleMoviesProps> = ({ movie }) => {
         <div className="col-start-8 col-end-9 row-start-2 row-end-2 ">
           <p>•</p>
         </div>
+
           {/* Brauchen Enum */}
-        <div className="col-start-9 col-end-10 row-start-2 row-end-2 ">
-          <p className="col-start-4 col-span-1">{movie.genre_ids.join(", ")}</p>
-        </div>
-        <div className="col-start-10 col-end-11 row-start-2 row-end-2 ">
-          <p>•</p>
-        </div>
+          <div className="col-start-9 col-end-10 row-start-2 row-end-2 ">
+            {/* <p className="col-start-4 col-span-1">{movie.genres.join(", ")}</p> */}
+            {/* <p className="col-start-4 col-span-1">{movie?.genres.}</p> */}
+          </div>
+          <div className="col-start-10 col-end-11 row-start-2 row-end-2 ">
+            <p>•</p>
+          </div>
           {/* Hier bitte auf die Zeitumwandlung achten! */}
-        <div className="col-start-11 col-end-12 row-start-2 row-end-2 ">
-          <p className="col-start-5 col-span-1">Dauer</p>
+          <div className="col-start-11 col-end-12 row-start-2 row-end-2 ">
+            <p className="col-start-5 col-span-1">{movie.runtime}</p>
+          </div>
         </div>
-      </div>
-
-
-
-    </section>
+      </section>
+    </NavLink>
   );
 };
 
 export default SingleMovies;
-

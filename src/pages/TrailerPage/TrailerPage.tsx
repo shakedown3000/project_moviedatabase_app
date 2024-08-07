@@ -148,7 +148,7 @@
 import { useContext } from "react";
 import { TrailerContext } from "../../context/Context";
 import ReactPlayer from "react-player";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+
 import "./TrailerPage.css";
 
 const TrailerPage = () => {
@@ -160,7 +160,7 @@ const TrailerPage = () => {
     ? `https://www.youtube.com/watch?v=${videoKey}`
     : "";
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // const handleBackClick = () => {
   //   navigate(-1);

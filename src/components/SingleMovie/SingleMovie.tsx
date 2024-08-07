@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom";
 import { IMovieDetail } from "../../Interfaces/IMovieDetails";
 
 import "./SingleMovie.css/";
-import { useContext, useEffect, useState } from "react";
-import { MovieDetailContext, SearchContext } from "../../context/Context";
+import { useContext } from "react";
+import { MovieDetailContext } from "../../context/Context";
 
 interface SingleMoviesProps {
   movie: IMovieDetail;
@@ -13,9 +13,9 @@ const SingleMovies: React.FC<SingleMoviesProps> = ({ movie }) => {
   const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
   const movieDetailContext = useContext(MovieDetailContext);
-  const searchContext = useContext(SearchContext);
+  // const searchContext = useContext(SearchContext);
 
-  const runtime = movieDetailContext?.movieDetail?.runtime;
+  // const runtime = movieDetailContext?.movieDetail?.runtime;
 
   // const [movieDetail, setMovieDetail] = useState<IMovieDetail | null>(null);
 

@@ -21,7 +21,7 @@ const GalleryTrendingMovies: React.FC<GalleryTrendingMoviesProps> = ({
             <div className="border-2 flex flex-col justify-end items-center h-full bg-gradient-to-t from-black via-transparent to-transparent rounded-lg pb-4">
               <h2 className="  text-white text-lg truncate ">{movie.title}</h2>
               <div className="gap-2 flex">
-                <img src={"/public/Star.svg"} alt="Star" />
+                <img src={"/Star.svg"} alt="Star" />
                 <p> {movie.vote_average.toFixed(1)} / 10</p>
               </div>
             </div>

@@ -44,7 +44,6 @@ import CategoryButtons from "../../components/CategoryButtons";
 import SearchInput from "../../components/SearchInput";
 import SingleMovies from "../../components/SingleMovie/SingleMovie";
 import { ISearchMovie } from "../../Interfaces/ISearchMovie";
-import { IMovieDetail } from "../../Interfaces/IMovieDetails";
 
 interface LocationState {
   results?: ISearchMovie;

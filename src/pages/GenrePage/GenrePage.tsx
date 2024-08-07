@@ -1,9 +1,11 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
 import BottomNavBar from "../../components/BottomNav";
 import CategoryButtons from "../../components/CategoryButtons";
 import SearchInput from "../../components/SearchInput";
 import SingleMovies from "../../components/SingleMovie/SingleMovie";
+import { IMovieDetail } from "../../Interfaces/IMovieDetails";
+import { MovieDetailContext } from "../../context/Context";
 
 // import { IMovieDetail } from "../../Interfaces/IMovieDetails";
 

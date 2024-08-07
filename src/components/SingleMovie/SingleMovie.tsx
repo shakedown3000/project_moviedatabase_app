@@ -24,7 +24,9 @@ const SingleMovies: React.FC<SingleMoviesProps> = ({ movie }) => {
               className="w-full h-full object-cover rounded-md"
             />
           </div>
-          <h3 className="text-xl font-bold line-clamp-2">{movie.title}</h3>
+          <h3 className="text-xl font-bold line-clamp-2 text-black">
+            {movie.title}
+          </h3>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -37,7 +39,7 @@ const SingleMovies: React.FC<SingleMoviesProps> = ({ movie }) => {
               d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
             />
           </svg>
-          <div className="flex items-center justify-between col-start-2 col-span-2 w-full gap-2">
+          <div className="flex items-center justify-between col-start-2 col-span-2 w-full gap-2 text-black">
             <img className="w-4" src="/public/Star.svg" alt="Star" />
             <span className="font-bold">{movie.vote_average.toFixed(1)}</span>
             <span>•</span>

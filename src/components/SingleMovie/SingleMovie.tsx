@@ -40,7 +40,7 @@ const SingleMovies: React.FC<SingleMoviesProps> = ({ movie }) => {
             />
           </svg>
           <div className="flex items-center justify-between col-start-2 col-span-2 w-full gap-2 text-black">
-            <img className="w-4" src="/public/Star.svg" alt="Star" />
+            <img className="w-4" src="/Star.svg" alt="Star" />
             <span className="font-bold">{movie.vote_average.toFixed(1)}</span>
             <span>•</span>
             <span>{movie.release_date.toString().split("-")[0]}</span>

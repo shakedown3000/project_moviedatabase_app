@@ -103,7 +103,7 @@ const DetailPage: React.FC = () => {
             </h2>
             <div className="details_movie_info flex justify-between items-center gap-1.5">
               <p className="font-bold flex">
-                <img src={"/public/Star.svg"} alt="Star" className="mr-2" />
+                <img src={"/Star.svg"} alt="Star" className="mr-2" />
                 {movieDetail?.vote_average.toFixed(1)}
               </p>
               <p>•</p>
@@ -127,10 +127,7 @@ const DetailPage: React.FC = () => {
           </div>
           <div>
             <h3 className="text-xl mb-4 font-bold">Overview</h3>
-            {/* <p className="font-poppins font-thin">
-              {movieDetail?.overview}
-              <span style={{ color: "red" }}> See more …</span>
-            </p> */}
+
             <p
               className={`font-poppins font-thin ${
                 isExpanded ? "long-text" : "short-text"
@@ -153,8 +150,6 @@ const DetailPage: React.FC = () => {
               Genres
             </p>
             <p className="col-start-2 col-end-3 row-start-1 row-end-2">
-              {/* {movieDetail?.genres[0]?.name}, {movieDetail?.genres[1]?.name},
-              {movieDetail?.genres[2]?.name} */}
               {movieDetail?.genres
                 .slice(0, 3)
                 .map((genre) => getMappedGenreName(genre.name))

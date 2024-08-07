@@ -12,12 +12,12 @@ const IntroPage: React.FC = () => {
     <div className="relative TopIntroSection flex flex-col h-full">
       <section className="flex justify-center align-center pt-20 z-0 overflow-hidden">
         <img
-          src="/public/TrendingMovie.png"
+          src="/TrendingMovie.png"
           alt="ImgTrendingMovie"
           className="top-16 left-10 z-1 -rotate-6 animation-slide-in-left absolute"
         />
         <img
-          src="/public/LokiEpisode.png"
+          src="/LokiEpisode.png"
           alt="ImgLokiEpisode"
           className="top-24 right-10 z-2 rotate-6 animation-slide-in-right absolute"
         />

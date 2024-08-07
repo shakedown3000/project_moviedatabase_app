@@ -47,7 +47,7 @@ import { ISearchMovie } from "../../Interfaces/ISearchMovie";
 import { IMovieDetail } from "../../Interfaces/IMovieDetails";
 
 interface LocationState {
-  results?: IMovieDetail;
+  results?: ISearchMovie;
 }
 
 const GenrePage: React.FC = () => {

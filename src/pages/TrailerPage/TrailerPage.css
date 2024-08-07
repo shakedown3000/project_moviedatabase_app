@@ -1,25 +1,28 @@
 .trailer-container {
-  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+  justify-content: center;
+  width: 50vw;
+  height: 80vh;
+  background-color: black; /* Optional: Background color for better contrast */
+  overflow: hidden; /* Ensure no scrollbars appear */
 }
 
 .video-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  width: 50%;
+  height: 500%;
   transform: rotate(90deg);
-  transform-origin: center center;
+  transform-origin: center;
+  /* Adjusting dimensions due to rotation */
+  width: full; /* Height of the container becomes the width of the player */
+  height: 50%; /* Width of the container becomes the height of the player */
 }
 
 .react-player {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
 }

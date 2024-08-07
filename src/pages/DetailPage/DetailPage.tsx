@@ -15,8 +15,6 @@ const DetailPage: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const trailerContext = useContext(TrailerContext);
 
-
-
   const navigate = useNavigate();
   const handleGetStarted = () => {
     navigate("/trailer/:id");
@@ -40,43 +38,24 @@ const DetailPage: React.FC = () => {
   }, []);
 
   //--------------Trailer
+  useEffect(() => {
+    const optionsTrailer = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOGQ4NDk0NDY0ZmRjOGYzZWIxOWVmZWIxZWU5OTFjZSIsIm5iZiI6MTcyMjg0Mzg4Mi40NTgwMjcsInN1YiI6IjY2YjA3ZmRiZTYyZTljNTgxZjJmNDYzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.avIT52XMk3Qiss0Jdm6Mh_RahyN644PvBugIR1SELTk",
+      },
+    };
 
-  const optionsTrailer = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOGQ4NDk0NDY0ZmRjOGYzZWIxOWVmZWIxZWU5OTFjZSIsIm5iZiI6MTcyMjg0Mzg4Mi40NTgwMjcsInN1YiI6IjY2YjA3ZmRiZTYyZTljNTgxZjJmNDYzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.avIT52XMk3Qiss0Jdm6Mh_RahyN644PvBugIR1SELTk",
-    },
-  };
-
-  fetch(
-    `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`,
-    optionsTrailer
-  )
-    .then((response) => response.json())
-    .then((response) => trailerContext?.setTrailer(response))
-    .catch((err) => console.error(err));
-
-  ///-------- GenreFilter-----
-
-  const optionsGenre = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOGQ4NDk0NDY0ZmRjOGYzZWIxOWVmZWIxZWU5OTFjZSIsIm5iZiI6MTcyMjg0OTc0Mi44MDk4NjIsInN1YiI6IjY2YjA3ZmRiZTYyZTljNTgxZjJmNDYzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9Fv4TnFpeNABAlSf4FvvqEmxTVEggxnuOYXjUB4utPk",
-    },
-  };
-
-  fetch(
-    "https://api.themoviedb.org/3/discover/movie?include_with_genres=horror",
-    optionsGenre
-  )
-    .then((response) => response.json())
-    .then((response) => console.log(response))
-    .catch((err) => console.error(err));
-
+    fetch(
+      `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`,
+      optionsTrailer
+    )
+      .then((response) => response.json())
+      .then((response) => trailerContext?.setTrailer(response))
+      .catch((err) => console.error(err));
+  }, []);
   const getMappedGenreName = (genreName: string) => {
     return genreMap[genreName] || genreName;
   };
@@ -116,7 +95,7 @@ const DetailPage: React.FC = () => {
           </div>
         </div>
         <div className="gradient-overlay"></div>
-        <div className="relative z-20 flex flex-col items-center justify-between w-full h-full px-4 pt-4 text-black h-60 mb-0 mt-auto">
+        <div className="relative z-20 flex flex-col items-center justify-between w-full h-full px-4 pt-4 text-black h-60  mt-auto">
           <div>
             <p className="text-center mb-1">Movie Details</p>
             <h2 className="h2-font-weight-black text-2xl text-center mb-2">

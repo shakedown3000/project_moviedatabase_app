@@ -1,8 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { IMovieDetail } from "../../Interfaces/IMovieDetails";
 
 import "./SingleMovie.css/";
-import { ISearchMovie } from "../../Interfaces/ISearchMovie";
 
 interface SingleMoviesProps {
   movie: IMovieDetail;

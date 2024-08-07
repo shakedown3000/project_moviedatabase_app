@@ -6,7 +6,6 @@ import SearchInput from "../../components/SearchInput";
 import SingleMovies from "../../components/SingleMovie/SingleMovie";
 
 import { IMovieDetail } from "../../Interfaces/IMovieDetails";
-import { ISearchMovie } from "../../Interfaces/ISearchMovie";
 
 interface LocationState {
   results?: IMovieDetail;

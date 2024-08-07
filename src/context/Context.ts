@@ -2,7 +2,6 @@ import { createContext } from "react";
 import { IResult } from "../Interfaces/ITrendingMovies";
 import { ISearchMovie } from "../Interfaces/ISearchMovie";
 import { IMovieTrailer } from "../Interfaces/IMovieTrailer";
-import { IMovieDetail } from "../Interfaces/IMovieDetails";
 
 interface ILoading {
   loading: boolean;
@@ -30,19 +29,3 @@ interface ITrailer {
 }
 
 export const TrailerContext = createContext<ITrailer | null>(null);
-
-// interface ICategoryFilter {
-//   filter: ISearchMovie | null;
-//   setFilter: React.Dispatch<React.SetStateAction<ISearchMovie | null>>;
-// }
-
-// export const CategoryContext = createContext<ICategoryFilter | null>(null);
-
-// interface IMovieDetailContext {
-//   movieDetail: IMovieDetail | null;
-//   setMovieDetail: React.Dispatch<React.SetStateAction<IMovieDetail | null>>;
-// }
-
-// export const MovieDetailContext = createContext<IMovieDetailContext | null>(
-//   null
-// );

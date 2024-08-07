@@ -3,7 +3,6 @@ import "./App.css";
 import LoadingPage from "./pages/LoadingPage/LoadingPage";
 import {
   LoadingContext,
-  MovieDetailContext,
   SearchContext,
   TrailerContext,
   TrendingMovieContext,
@@ -17,7 +16,6 @@ import TrailerPage from "./pages/TrailerPage/TrailerPage";
 import { IResult } from "./Interfaces/ITrendingMovies";
 import { ISearchMovie } from "./Interfaces/ISearchMovie";
 import { IMovieTrailer } from "./Interfaces/IMovieTrailer";
-import { IMovieDetail } from "./Interfaces/IMovieDetails";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -25,7 +23,7 @@ function App() {
   const [movieTrendingData, setMovieTrendingData] = useState<IResult[] | null>(
     null
   );
-  const [trailer, setTrailer] = useState<IMovieTrailer[] | null>(null);
+  const [trailer, setTrailer] = useState<IMovieTrailer | null>(null);
   // const [movieDetail, setMovieDetail] = useState<IMovieDetail | null>(null);
 
   return (

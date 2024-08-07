@@ -20,9 +20,13 @@ const GalleryTrendingMovies: React.FC<GalleryTrendingMoviesProps> = ({
           <Link
             to={`/detail/${movie.id}`}
             className="absolute inset-0 flex items-end justify-center">
-            <div className="flex items-end justify-center h-full bg-gradient-to-t from-black via-transparent to-transparent rounded-lg p-2">
+            <div className="flex items-end justify-center h-full bg-gradient-to-t from-black via-transparent to-transparent rounded-lg p-4">
               <h3 className="text-white text-lg text-center truncate">
                 {movie.title}
+                <p className="flex flex-row gap-2">
+                  <img src={"/public/Star.svg"} alt="Star" />
+                  {movie.vote_average.toFixed(1)} / 10
+                </p>
               </h3>
             </div>
           </Link>

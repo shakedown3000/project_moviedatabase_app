@@ -101,6 +101,4 @@ This project was a collaborative effort involving three team members, each bring
 - **[shakedown3000](https://github.com/shakedown3000)**: Led the UI/UX design implementation as well as functionality and state management, crafting the visual elements of the app and working closely on the CSS styling with Tailwind CSS and DaisyUI.
 - **[Lisa](https://github.com/lisayl1688)**: Focused on CSS/HTML ensuring a seamless user experience.
 
-<p align="center">
- ![Mov Prentation](./public/MOV%20Presentation.svg)
-</p>
+![Mov Prentation](./public/MOV%20Presentation.svg)

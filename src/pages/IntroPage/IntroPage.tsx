@@ -41,7 +41,3 @@ const IntroPage: React.FC = () => {
 };
 
 export default IntroPage;
-
-{
-  /* <section className="flex flex-row py-20 px-3 z-0 overflow-hidden"></section> */
-}

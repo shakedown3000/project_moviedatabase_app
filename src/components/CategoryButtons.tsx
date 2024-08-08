@@ -39,21 +39,21 @@ const CategoryButtons = () => {
   return (
     <div className="w-full flex space-x-4">
       <button
-        className={`flex-1 h-8 lightgray-background rounded-lg flex items-center justify-center shadow-sm ${
+        className={`flex-1 h-8 lightgray-background rounded-lg flex items-center justify-center shadow-sm text-black ${
           selectedGenre === 28 ? "bg-gray-300" : ""
         }`}
         onClick={() => handleButtonClick(28)}>
         Action
       </button>
       <button
-        className={`flex-1 h-8 lightgray-background rounded-lg flex items-center justify-center shadow-sm ${
+        className={`flex-1 h-8 lightgray-background rounded-lg flex items-center justify-center shadow-sm text-black ${
           selectedGenre === 35 ? "bg-gray-300" : ""
         }`}
         onClick={() => handleButtonClick(35)}>
         Comedy
       </button>
       <button
-        className={`flex-1 h-8 lightgray-background rounded-lg flex items-center justify-center shadow-sm ${
+        className={`flex-1 h-8 lightgray-background rounded-lg flex items-center justify-center shadow-sm text-black ${
           selectedGenre === 27 ? "bg-gray-300" : ""
         }`}
         onClick={() => handleButtonClick(27)}>

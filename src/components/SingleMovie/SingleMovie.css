@@ -1,5 +1,5 @@
 .icon-stroke {
-  stroke: #97aabd;
+  stroke: #a9a9a9;
 }
 
 .icon-stroke-hover:hover {
@@ -12,5 +12,5 @@
 
 .icon-fill-hover:hover {
   fill: #ff0000;
-  stroke: none;
+  stroke: white;
 }
